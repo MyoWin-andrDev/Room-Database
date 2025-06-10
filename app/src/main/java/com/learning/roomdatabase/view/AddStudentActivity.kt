@@ -33,9 +33,10 @@ class AddStudentActivity : AppCompatActivity() {
         studentDB = StudentDBInstance.getDatabaseInstance(this)
     }
 
-    private fun loadStudentData() {
+    private fun loadStudentData() = with(binding){
         student = intent.getParcelableExtra<StudentModel>(Constants.STUDENT_DATA)
-        binding.tbHome.title = if (student != null) Constants.Titles.EDIT_STUDENT else Constants.Titles.ADD_STUDENT
+        tbHome.title = if (student != null) Constants.Titles.EDIT_STUDENT else Constants.Titles.ADD_STUDENT
+        tbHome.setNavigationOnClickListener { finish() }
         student?.let { populateFields(it) }
     }
 

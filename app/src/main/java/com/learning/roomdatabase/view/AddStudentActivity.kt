@@ -123,12 +123,12 @@ class AddStudentActivity : AppCompatActivity() {
 
     private fun createStudentFromInput(): StudentModel = with(binding) {
         return StudentModel(
-            id = 0,
             name = etName.text.toString().trim(),
             grade = etGrade.text.toString().trim(),
             room = etRoomNo.text.toString().trim(),
             gender = getSelectedGender(),
-            fatherName = etFatherName.text.toString().trim()
+            fatherName = etFatherName.text.toString().trim(),
+            id = 0,
         )
     }
 

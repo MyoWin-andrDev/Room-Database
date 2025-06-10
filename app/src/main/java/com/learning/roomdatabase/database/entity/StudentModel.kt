@@ -20,6 +20,7 @@ data class StudentModel(
     val gender: Int,
     @ColumnInfo("s_fatherName")
     val fatherName : String,
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo("s_id")
     val id : Int  = 0,
